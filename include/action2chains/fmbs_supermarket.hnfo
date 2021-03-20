@@ -1,0 +1,336 @@
+// Action 2 Chain:
+// Variation 1
+0 * 0		02 07 // act 2 feat 7
+			10 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			00 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			11 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			01 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			12 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			02 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			13 // setid
+			00 // not a varact
+			04 00 00 80 // ground sprite
+			03 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			14 // setid
+			00 // not a varact
+			04 00 00 80 // ground sprite
+			05 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+			
+0 * 0		02 07 // act 2 feat 7
+			15 // setid
+			81 // town var
+			43 // terrain type
+			00 // shift
+			FF // and mask
+			02 // ranges to follow
+			13 00 // not snowy sprite
+				00 
+				03 
+			14 00 // snowy sprite
+				04 
+				04 
+			13 00 // default not snowy
+
+0 * 0		02 07 // act 2 feat 7
+			16 // setid
+			81 // town var
+			40 // Construction Stage
+			00 // shift
+			03 // and mask
+			03 // ranges to follow
+			10 00 // stage 0
+				00 
+				00 
+			11 00 // stage 1
+				01 
+				01 
+			12 00 // stage 2
+				02 
+				02 
+			15 00 // stage 3 built (go to snow picker)
+			
+// Variation 2
+0 * 0		02 07 // act 2 feat 7
+			20 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			06 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			21 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			07 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			22 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			08 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			23 // setid
+			00 // not a varact
+			0A 00 00 80 // ground sprite
+			09 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			24 // setid
+			00 // not a varact
+			0A 00 00 80 // ground sprite
+			0B 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+			
+0 * 0		02 07 // act 2 feat 7
+			25 // setid
+			81 // town var
+			43 // terrain type
+			00 // shift
+			FF // and mask
+			02 // ranges to follow
+			23 00 // not snowy sprite
+				00 
+				03 
+			24 00 // snowy sprite
+				04 
+				04 
+			23 00 // default not snowy
+
+0 * 0		02 07 // act 2 feat 7
+			26 // setid
+			81 // town var
+			40 // Construction Stage
+			00 // shift
+			03 // and mask
+			03 // ranges to follow
+			20 00 // stage 0
+				00 
+				00 
+			21 00 // stage 1
+				01 
+				01 
+			22 00 // stage 2
+				02 
+				02 
+			25 00 // stage 3 built (go to snow picker)
+			
+// Variation 3
+0 * 0		02 07 // act 2 feat 7
+			30 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			0C 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			31 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			0D 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			32 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			0E 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			33 // setid
+			00 // not a varact
+			10 00 00 80 // ground sprite
+			0F 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			34 // setid
+			00 // not a varact
+			10 00 00 80 // ground sprite
+			11 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+			
+0 * 0		02 07 // act 2 feat 7
+			35 // setid
+			81 // town var
+			43 // terrain type
+			00 // shift
+			FF // and mask
+			02 // ranges to follow
+			33 00 // not snowy sprite
+				00 
+				03 
+			34 00 // snowy sprite
+				04 
+				04 
+			33 00 // default not snowy
+
+0 * 0		02 07 // act 2 feat 7
+			36 // setid
+			81 // town var
+			40 // Construction Stage
+			00 // shift
+			03 // and mask
+			03 // ranges to follow
+			30 00 // stage 0
+				00 
+				00 
+			31 00 // stage 1
+				01 
+				01 
+			32 00 // stage 2
+				02 
+				02 
+			35 00 // stage 3 built (go to snow picker)
+			
+// Variation 4
+0 * 0		02 07 // act 2 feat 7
+			40 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			12 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			41 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			13 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			42 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			14 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			43 // setid
+			00 // not a varact
+			16 00 00 80 // ground sprite
+			15 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			44 // setid
+			00 // not a varact
+			16 00 00 80 // ground sprite
+			17 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			45 // setid
+			81 // town var
+			43 // terrain type
+			00 // shift
+			FF // and mask
+			02 // ranges to follow
+			43 00 // not snowy sprite
+				00 
+				03 
+			44 00 // snowy sprite
+				04 
+				04 
+			43 00 // default not snowy
+
+0 * 0		02 07 // act 2 feat 7
+			46 // setid
+			81 // town var
+			40 // Construction Stage
+			00 // shift
+			03 // and mask
+			03 // ranges to follow
+			40 00 // stage 0
+				00 
+				00 
+			41 00 // stage 1
+				01 
+				01 
+			42 00 // stage 2
+				02 
+				02 
+			45 00 // stage 3 built (go to snow picker)
+
+ // Pick random variation
+0 * 0	02 07 // act 2 feat 7
+		60 // spriteid
+		80 // random
+		00 // no triggers
+		00 // first random bit to use
+		04 // numranges 
+			16 00 // 1st
+			26 00 // 2nd
+			36 00 // 3rd
+			46 00 // 4th
+
+// Check to see if one has already been built
+0 * 0		02 07 // Act 2 feat 7
+			70 // setid
+			81 // town var
+			61 // how many of a building id exist
+			BUILDING_ID // the building id to check, ours!
+			00 // shift
+			FF // and mask
+			02 // ranges to follow
+			01 80 // setid to use (protec)
+				00 // minval
+				03 // maxval		
+			00 80 // setid to use (unprotec)
+				04 // minval
+				FF // maxval
+			60 00 // setid to use (unprotec) 
+
+// varact2 to restrict building until a certain population (3k)
+0 * 0		2 07 
+			80 // setid
+			86 // var of city
+			82 // var town pop
+			00 FF FF // varadj
+			02 // numranges
+			00 80 // setid
+				00 00 // minval
+				E7 03 // maxval
+			01 80 // setid
+				E8 03 // minval
+				FF FF // maxval
+			60 00 // default setid  
+
+// Current Callback  
+0 * 0		02 07 // act 2 feat 7
+			90 // setid
+			85 // type, variable of building
+			0C // variable 0c current callback
+			00 // shift
+			FF FF // and mask
+			02 // ranges to follow
+			80 00 // setid
+				17 00 // callback 17 on build
+				17 00 // callback 17 on build
+			70 00 // setid check how many are left
+				43 01 // callback 143 on destruct
+				43 01 // callback 143 on destruct
+			60 00 // default setid which is the random chance to pick the style, which points at the construction stages, etc.

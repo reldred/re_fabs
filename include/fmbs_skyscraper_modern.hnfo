@@ -1,0 +1,83 @@
+// Modern Skyscrapers
+
+// Action 1's - Four Variations
+0 * 0	01 07 18 FF 01 00
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
+0	 	art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|   	art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
+0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
+
+// Action 0
+0 * 0	00 07 
+		0B
+		01 
+		BUILDING_ID 
+		08 34 
+		09 01 
+//		0A 00 1D // old short form intro/outro, unused
+		10 60 EA 
+		11 FF 
+		13 10 78 
+		14 01 
+		18 08
+		19 02 // Flat out protected.
+		1D 04
+		21 \w1980 // long intro 1950
+		22 \w2029 // long outro 2029
+
+ // Action 4 to set name:  
+0 * 0	04 07  // Action 4, Feature 7
+		9F // Language ID
+		01 // Number of strings to change
+		BUILDING_ID C9 // Offset
+		"Modern Sky Scraper" 00 // String
+
+// Action 2 Chain:
+#include "action2chains/fmbs_skyscraper_modern.hnfo"  
+
+// Action 3
+2003 * 7	 03 07 01 BUILDING_ID 00 3C 00 
