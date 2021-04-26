@@ -4,7 +4,7 @@
 // Escapes: 71 70 7= 7! 7< 7> 7G 7g 7gG 7GG 7gg 7c 7C
 // Escapes: D= = DR D+ = DF D- = DC Du* = DM D* = DnF Du<< = DnC D<< = DO D& D| Du/ D/ Du% D%
 // Format: spritenum imagefile depth xpos ypos xsize ysize xrel yrel zoom flags
-    0 * 4	 2D 01 00 00
+    0 * 4	 28 01 00 00
 // Total number of sprites (Let nforenum deal with this):
 // Action 8 for description, copyright notice, and grfid:
 //!!Warning (219): There was no Action 14 specifying the palette.
@@ -66,8 +66,7 @@
 // Action 0
    27 * 31	 00 07 0B 01 00 08 34 09 01
 // 0A 00 1D // old short form intro/outro, unused
-  10 \w60000 11 FF 13 10 78 14 01 18 08 19 02 // Flat out protected.
-  1D 04 21 \w1980 // long intro 1950
+  10 \w60000 11 FF 13 10 78 14 01 18 08 1D 04 1F 1E 21 \w1980 // long intro 1950
   22 \w2029 // long outro 2029
  // Action 4 to set name:  
    28 * 25	 04 07 // Action 4, Feature 7
@@ -145,26 +144,9 @@
    21 00 // 2nd
    23 00 // 3rd
    25 00 // 4th
-// Check to see if one has already been built
-//!!Warning (170): Default result cannot be reached.
-   58 * 19	 02 07 // Act 2 feat 7
-  2B // setid
-  81 // town var
-  61 // how many of a building id exist
-  00 // the building id to check, ours!
-  00 // shift
-  FF // and mask
-  02 // ranges to follow
-  01 80 // setid to use (protec)
-   00 // minval
-   05 // maxval
-  00 80 // setid to use (unprotec)
-   06 // minval
-   FF // maxval
-  2A 00 // setid to use (unprotec) 
 // varact2 to restrict building until a certain population (3k)
 //!!Warning (170): Default result cannot be reached.
-   59 * 23	 02 07 2C // setid
+   58 * 23	 02 07 2C // setid
   86 // var of city
   82 // var town pop
   00 // shift
@@ -178,83 +160,81 @@
    FF FF // maxval
   2A 00 // default setid  
 // Current Callback  
-   60 * 23	 02 07 // act 2 feat 7
+   59 * 17	 02 07 // act 2 feat 7
   3C // setid
   85 // type, variable of building
   0C // variable 0c current callback
   00 // shift
   FF FF // and mask
-  02 // ranges to follow
+  01 // ranges to follow
   2C 00 // setid
    17 00 // callback 17 on build
    17 00 // callback 17 on build
-  2B 00 // setid check how many are left
-   43 01 // callback 143 on destruct
-   43 01 // callback 143 on destruct
   2A 00 // default setid which is the random chance to pick the style, which points at the construction stages, etc.
 // Action 3
-   61 * 7	 03 07 01 00 00 3C 00
+   60 * 7	 03 07 01 00 00 3C 00
 // ID 01 - 04 Department Stores 1-4 (North, East, West and South)
 // Department Store (N)
 // Action 1's - Four Variations
-   62 * 6	 01 07 18 FF 01 00
+   61 * 6	 01 07 18 FF 01 00
 // 1st
-   63 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   62 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 10 10 64 48 -31 -17 normal chunked nocrop
-   64 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   63 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 84 10 64 48 -31 -17 normal chunked nocrop
-   65 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   64 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 158 10 64 48 -31 -17 normal chunked nocrop
-   66 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   65 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 232 10 64 48 -31 -17 normal chunked nocrop
-   67 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   66 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 306 10 64 48 -31 -17 normal chunked nocrop
-   68 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   67 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 380 10 64 48 -31 -17 normal chunked nocrop
 // 2nd
-   69 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   68 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 10 10 64 49 -31 -18 normal chunked nocrop
-   70 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   69 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 84 10 64 49 -31 -18 normal chunked nocrop
-   71 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   70 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 158 10 64 49 -31 -18 normal chunked nocrop
-   72 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   71 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 232 10 64 49 -31 -18 normal chunked nocrop
-   73 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   72 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 306 10 64 49 -31 -18 normal chunked nocrop
-   74 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   73 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 380 10 64 49 -31 -18 normal chunked nocrop
 // 3rd
-   75 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   74 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 10 10 64 45 -31 -14 normal chunked nocrop
-   76 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   75 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 84 10 64 45 -31 -14 normal chunked nocrop
-   77 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   76 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 158 10 64 45 -31 -14 normal chunked nocrop
-   78 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   77 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 232 10 64 45 -31 -14 normal chunked nocrop
-   79 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   78 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 306 10 64 45 -31 -14 normal chunked nocrop
-   80 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   79 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 380 10 64 45 -31 -14 normal chunked nocrop
 // 4th
-   81 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   80 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 10 10 64 47 -31 -16 normal chunked nocrop
-   82 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   81 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 84 10 64 47 -31 -16 normal chunked nocrop
-   83 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   82 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 158 10 64 47 -31 -16 normal chunked nocrop
-   84 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   83 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 232 10 64 47 -31 -16 normal chunked nocrop
-   85 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   84 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 306 10 64 47 -31 -16 normal chunked nocrop
-   86 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+   85 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 380 10 64 47 -31 -16 normal chunked nocrop
 // Action 0
-   87 * 31	 00 07 0B 01 01 08 20 09 12 10 \w60000 11 FF 13 1C 78 14 01 18 0F 19 02 1D 04 21 \w1980 // long intro 1950
+//!!Error (63): Expected 1 more properties.
+   86 * 31	 00 07 0B 01 01 08 20 09 12 10 \w60000 11 FF 13 1C 78 14 01 18 0F 1D 04 1E 1F 21 BC 07 // long intro 1950
   22 \w2029 // long outro 2029
 // Action 4 to set name:  
-   88 * 29	 04 07 // Action 4, Feature 7
+   87 * 29	 04 07 // Action 4, Feature 7
   9F // Language ID
   01 // Number of strings to change
   01 C9 // Offset
@@ -262,38 +242,38 @@
 // Action 2 Chain:
 // Action 2 Chain:
 // Variation 1
-   89 * 17	 02 07 // act 2 feat 7
+   88 * 17	 02 07 // act 2 feat 7
    10 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    00 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-   90 * 17	 02 07 // act 2 feat 7
+   89 * 17	 02 07 // act 2 feat 7
    11 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    01 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-   91 * 17	 02 07 // act 2 feat 7
+   90 * 17	 02 07 // act 2 feat 7
    12 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    02 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-   92 * 17	 02 07 // act 2 feat 7
+   91 * 17	 02 07 // act 2 feat 7
    13 // setid
    00 // not a varact
    04 00 00 80 // ground sprite
    03 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-   93 * 17	 02 07 // act 2 feat 7
+   92 * 17	 02 07 // act 2 feat 7
    14 // setid
    00 // not a varact
    04 00 00 80 // ground sprite
    05 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-   94 * 18	 02 07 // act 2 feat 7
+   93 * 18	 02 07 // act 2 feat 7
    15 // setid
    81 // town var
    43 // terrain type
@@ -305,7 +285,7 @@
      14 00 // snowy sprite
     04 04
      13 00 // default not snowy
-   95 * 22	 02 07 // act 2 feat 7
+   94 * 22	 02 07 // act 2 feat 7
    16 // setid
    81 // town var
    40 // Construction Stage
@@ -320,38 +300,38 @@
     02 02
      15 00 // stage 3 built (go to snow picker)
 // Variation 2
-   96 * 17	 02 07 // act 2 feat 7
+   95 * 17	 02 07 // act 2 feat 7
    20 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    06 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-   97 * 17	 02 07 // act 2 feat 7
+   96 * 17	 02 07 // act 2 feat 7
    21 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    07 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-   98 * 17	 02 07 // act 2 feat 7
+   97 * 17	 02 07 // act 2 feat 7
    22 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    08 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-   99 * 17	 02 07 // act 2 feat 7
+   98 * 17	 02 07 // act 2 feat 7
    23 // setid
    00 // not a varact
    0A 00 00 80 // ground sprite
    09 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  100 * 17	 02 07 // act 2 feat 7
+   99 * 17	 02 07 // act 2 feat 7
    24 // setid
    00 // not a varact
    0A 00 00 80 // ground sprite
    0B 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  101 * 18	 02 07 // act 2 feat 7
+  100 * 18	 02 07 // act 2 feat 7
    25 // setid
    81 // town var
    43 // terrain type
@@ -363,7 +343,7 @@
      24 00 // snowy sprite
     04 04
      23 00 // default not snowy
-  102 * 22	 02 07 // act 2 feat 7
+  101 * 22	 02 07 // act 2 feat 7
    26 // setid
    81 // town var
    40 // Construction Stage
@@ -378,38 +358,38 @@
     02 02
      25 00 // stage 3 built (go to snow picker)
 // Variation 3
-  103 * 17	 02 07 // act 2 feat 7
+  102 * 17	 02 07 // act 2 feat 7
    30 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0C 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  104 * 17	 02 07 // act 2 feat 7
+  103 * 17	 02 07 // act 2 feat 7
    31 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0D 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  105 * 17	 02 07 // act 2 feat 7
+  104 * 17	 02 07 // act 2 feat 7
    32 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0E 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  106 * 17	 02 07 // act 2 feat 7
+  105 * 17	 02 07 // act 2 feat 7
    33 // setid
    00 // not a varact
    10 00 00 80 // ground sprite
    0F 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  107 * 17	 02 07 // act 2 feat 7
+  106 * 17	 02 07 // act 2 feat 7
    34 // setid
    00 // not a varact
    10 00 00 80 // ground sprite
    11 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  108 * 18	 02 07 // act 2 feat 7
+  107 * 18	 02 07 // act 2 feat 7
    35 // setid
    81 // town var
    43 // terrain type
@@ -421,7 +401,7 @@
      34 00 // snowy sprite
     04 04
      33 00 // default not snowy
-  109 * 22	 02 07 // act 2 feat 7
+  108 * 22	 02 07 // act 2 feat 7
    36 // setid
    81 // town var
    40 // Construction Stage
@@ -436,38 +416,38 @@
     02 02
      35 00 // stage 3 built (go to snow picker)
 // Variation 4
-  110 * 17	 02 07 // act 2 feat 7
+  109 * 17	 02 07 // act 2 feat 7
    40 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    12 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  111 * 17	 02 07 // act 2 feat 7
+  110 * 17	 02 07 // act 2 feat 7
    41 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    13 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  112 * 17	 02 07 // act 2 feat 7
+  111 * 17	 02 07 // act 2 feat 7
    42 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    14 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  113 * 17	 02 07 // act 2 feat 7
+  112 * 17	 02 07 // act 2 feat 7
    43 // setid
    00 // not a varact
    16 00 00 80 // ground sprite
    15 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  114 * 17	 02 07 // act 2 feat 7
+  113 * 17	 02 07 // act 2 feat 7
    44 // setid
    00 // not a varact
    16 00 00 80 // ground sprite
    17 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  115 * 18	 02 07 // act 2 feat 7
+  114 * 18	 02 07 // act 2 feat 7
    45 // setid
    81 // town var
    43 // terrain type
@@ -479,7 +459,7 @@
      44 00 // snowy sprite
     04 04
      43 00 // default not snowy
-  116 * 22	 02 07 // act 2 feat 7
+  115 * 22	 02 07 // act 2 feat 7
    46 // setid
    81 // town var
    40 // Construction Stage
@@ -494,7 +474,7 @@
     02 02
      45 00 // stage 3 built (go to snow picker)
  // Pick random variation
-  117 * 15	 02 07 // act 2 feat 7
+  116 * 15	 02 07 // act 2 feat 7
   60 // spriteid
   80 // random
   00 // no triggers
@@ -504,26 +484,9 @@
    26 00 // 2nd
    36 00 // 3rd
    46 00 // 4th
-// Check to see if one has already been built
-//!!Warning (170): Default result cannot be reached.
-  118 * 19	 02 07 // Act 2 feat 7
-   70 // setid
-   81 // town var
-   61 // how many of a building id exist
-   01 // the building id to check, ours!
-   00 // shift
-   FF // and mask
-   02 // ranges to follow
-   01 80 // setid to use (protec)
-    00 // minval
-    03 // maxval
-   00 80 // setid to use (unprotec)
-    04 // minval
-    FF // maxval
-   60 00 // setid to use (unprotec) 
 // varact2 to restrict building until a certain population (3k)
 //!!Warning (170): Default result cannot be reached.
-  119 * 23	 02 07 80 // setid
+  117 * 23	 02 07 80 // setid
    86 // var of city
    82 // var town pop
    00 FF FF // varadj
@@ -536,81 +499,78 @@
     FF FF // maxval
    60 00 // default setid  
 // Current Callback  
-  120 * 23	 02 07 // act 2 feat 7
+  118 * 17	 02 07 // act 2 feat 7
    90 // setid
    85 // type, variable of building
    0C // variable 0c current callback
    00 // shift
    FF FF // and mask
-   02 // ranges to follow
+   01 // ranges to follow
    80 00 // setid
     17 00 // callback 17 on build
     17 00 // callback 17 on build
-   70 00 // setid check how many are left
-    43 01 // callback 143 on destruct
-    43 01 // callback 143 on destruct
    60 00 // default setid which is the random chance to pick the style, which points at the construction stages, etc.
 // Action 3
-  121 * 7	 03 07 01 01 00 90 00
+  119 * 7	 03 07 01 01 00 90 00
 // Department Store (E)
 // Action 1's - Four Variations
-  122 * 6	 01 07 18 FF 01 00
+  120 * 6	 01 07 18 FF 01 00
 // 1st
-  123 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  121 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 10 68 64 48 -31 -17 normal chunked nocrop
-  124 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  122 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 84 68 64 48 -31 -17 normal chunked nocrop
-  125 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  123 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 158 68 64 48 -31 -17 normal chunked nocrop
-  126 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  124 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 232 68 64 48 -31 -17 normal chunked nocrop
-  127 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  125 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 306 68 64 48 -31 -17 normal chunked nocrop
-  128 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  126 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 380 68 64 48 -31 -17 normal chunked nocrop
 // 2nd
-  129 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  127 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 10 69 64 49 -31 -18 normal chunked nocrop
-  130 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  128 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 84 69 64 49 -31 -18 normal chunked nocrop
-  131 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  129 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 158 69 64 49 -31 -18 normal chunked nocrop
-  132 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  130 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 232 69 64 49 -31 -18 normal chunked nocrop
-  133 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  131 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 306 69 64 49 -31 -18 normal chunked nocrop
-  134 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  132 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 380 69 64 49 -31 -18 normal chunked nocrop
 // 3rd
-  135 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  133 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 10 65 64 44 -31 -13 normal chunked nocrop
-  136 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  134 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 84 65 64 44 -31 -13 normal chunked nocrop
-  137 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  135 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 158 65 64 44 -31 -13 normal chunked nocrop
-  138 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  136 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 232 65 64 44 -31 -13 normal chunked nocrop
-  139 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  137 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 306 65 64 44 -31 -13 normal chunked nocrop
-  140 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  138 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 380 65 64 44 -31 -13 normal chunked nocrop
 // 4th
-  141 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  139 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 10 67 64 47 -31 -16 normal chunked nocrop
-  142 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  140 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 84 67 64 47 -31 -16 normal chunked nocrop
-  143 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  141 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 158 67 64 47 -31 -16 normal chunked nocrop
-  144 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  142 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 232 67 64 47 -31 -16 normal chunked nocrop
-  145 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  143 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 306 67 64 47 -31 -16 normal chunked nocrop
-  146 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  144 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 380 67 64 47 -31 -16 normal chunked nocrop
 // Action 0
-  147 * 16	 00 07 05 01 02 08 21 10 \w60000 11 FF 19 02 1D 04
+  145 * 16	 00 07 05 01 02 08 21 10 \w60000 11 FF 19 02 1D 04
 // Action 4 to set name:  
-  148 * 28	 04 07 // Action 4, Feature 7
+  146 * 28	 04 07 // Action 4, Feature 7
   9F // Language ID
   01 // Number of strings to change
   02 C9 // Offset
@@ -618,38 +578,38 @@
 // Action 2 Chain:
 // Action 2 Chain:
 // Variation 1
-  149 * 17	 02 07 // act 2 feat 7
+  147 * 17	 02 07 // act 2 feat 7
    10 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    00 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  150 * 17	 02 07 // act 2 feat 7
+  148 * 17	 02 07 // act 2 feat 7
    11 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    01 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  151 * 17	 02 07 // act 2 feat 7
+  149 * 17	 02 07 // act 2 feat 7
    12 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    02 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  152 * 17	 02 07 // act 2 feat 7
+  150 * 17	 02 07 // act 2 feat 7
    13 // setid
    00 // not a varact
    04 00 00 80 // ground sprite
    03 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  153 * 17	 02 07 // act 2 feat 7
+  151 * 17	 02 07 // act 2 feat 7
    14 // setid
    00 // not a varact
    04 00 00 80 // ground sprite
    05 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  154 * 18	 02 07 // act 2 feat 7
+  152 * 18	 02 07 // act 2 feat 7
    15 // setid
    81 // town var
    43 // terrain type
@@ -661,7 +621,7 @@
      14 00 // snowy sprite
     04 04
      13 00 // default not snowy
-  155 * 22	 02 07 // act 2 feat 7
+  153 * 22	 02 07 // act 2 feat 7
    16 // setid
    81 // town var
    40 // Construction Stage
@@ -676,38 +636,38 @@
     02 02
      15 00 // stage 3 built (go to snow picker)
 // Variation 2
-  156 * 17	 02 07 // act 2 feat 7
+  154 * 17	 02 07 // act 2 feat 7
    20 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    06 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  157 * 17	 02 07 // act 2 feat 7
+  155 * 17	 02 07 // act 2 feat 7
    21 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    07 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  158 * 17	 02 07 // act 2 feat 7
+  156 * 17	 02 07 // act 2 feat 7
    22 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    08 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  159 * 17	 02 07 // act 2 feat 7
+  157 * 17	 02 07 // act 2 feat 7
    23 // setid
    00 // not a varact
    0A 00 00 80 // ground sprite
    09 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  160 * 17	 02 07 // act 2 feat 7
+  158 * 17	 02 07 // act 2 feat 7
    24 // setid
    00 // not a varact
    0A 00 00 80 // ground sprite
    0B 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  161 * 18	 02 07 // act 2 feat 7
+  159 * 18	 02 07 // act 2 feat 7
    25 // setid
    81 // town var
    43 // terrain type
@@ -719,7 +679,7 @@
      24 00 // snowy sprite
     04 04
      23 00 // default not snowy
-  162 * 22	 02 07 // act 2 feat 7
+  160 * 22	 02 07 // act 2 feat 7
    26 // setid
    81 // town var
    40 // Construction Stage
@@ -734,38 +694,38 @@
     02 02
      25 00 // stage 3 built (go to snow picker)
 // Variation 3
-  163 * 17	 02 07 // act 2 feat 7
+  161 * 17	 02 07 // act 2 feat 7
    30 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0C 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  164 * 17	 02 07 // act 2 feat 7
+  162 * 17	 02 07 // act 2 feat 7
    31 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0D 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  165 * 17	 02 07 // act 2 feat 7
+  163 * 17	 02 07 // act 2 feat 7
    32 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0E 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  166 * 17	 02 07 // act 2 feat 7
+  164 * 17	 02 07 // act 2 feat 7
    33 // setid
    00 // not a varact
    10 00 00 80 // ground sprite
    0F 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  167 * 17	 02 07 // act 2 feat 7
+  165 * 17	 02 07 // act 2 feat 7
    34 // setid
    00 // not a varact
    10 00 00 80 // ground sprite
    11 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  168 * 18	 02 07 // act 2 feat 7
+  166 * 18	 02 07 // act 2 feat 7
    35 // setid
    81 // town var
    43 // terrain type
@@ -777,7 +737,7 @@
      34 00 // snowy sprite
     04 04
      33 00 // default not snowy
-  169 * 22	 02 07 // act 2 feat 7
+  167 * 22	 02 07 // act 2 feat 7
    36 // setid
    81 // town var
    40 // Construction Stage
@@ -792,38 +752,38 @@
     02 02
      35 00 // stage 3 built (go to snow picker)
 // Variation 4
-  170 * 17	 02 07 // act 2 feat 7
+  168 * 17	 02 07 // act 2 feat 7
    40 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    12 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  171 * 17	 02 07 // act 2 feat 7
+  169 * 17	 02 07 // act 2 feat 7
    41 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    13 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  172 * 17	 02 07 // act 2 feat 7
+  170 * 17	 02 07 // act 2 feat 7
    42 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    14 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  173 * 17	 02 07 // act 2 feat 7
+  171 * 17	 02 07 // act 2 feat 7
    43 // setid
    00 // not a varact
    16 00 00 80 // ground sprite
    15 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  174 * 17	 02 07 // act 2 feat 7
+  172 * 17	 02 07 // act 2 feat 7
    44 // setid
    00 // not a varact
    16 00 00 80 // ground sprite
    17 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  175 * 18	 02 07 // act 2 feat 7
+  173 * 18	 02 07 // act 2 feat 7
    45 // setid
    81 // town var
    43 // terrain type
@@ -835,7 +795,7 @@
      44 00 // snowy sprite
     04 04
      43 00 // default not snowy
-  176 * 22	 02 07 // act 2 feat 7
+  174 * 22	 02 07 // act 2 feat 7
    46 // setid
    81 // town var
    40 // Construction Stage
@@ -850,7 +810,7 @@
     02 02
      45 00 // stage 3 built (go to snow picker)
  // Pick random variation
-  177 * 15	 02 07 // act 2 feat 7
+  175 * 15	 02 07 // act 2 feat 7
   60 // spriteid
   80 // random
   00 // no triggers
@@ -860,26 +820,9 @@
    26 00 // 2nd
    36 00 // 3rd
    46 00 // 4th
-// Check to see if one has already been built
-//!!Warning (170): Default result cannot be reached.
-  178 * 19	 02 07 // Act 2 feat 7
-   70 // setid
-   81 // town var
-   61 // how many of a building id exist
-   02 // the building id to check, ours!
-   00 // shift
-   FF // and mask
-   02 // ranges to follow
-   01 80 // setid to use (protec)
-    00 // minval
-    03 // maxval
-   00 80 // setid to use (unprotec)
-    04 // minval
-    FF // maxval
-   60 00 // setid to use (unprotec) 
 // varact2 to restrict building until a certain population (3k)
 //!!Warning (170): Default result cannot be reached.
-  179 * 23	 02 07 80 // setid
+  176 * 23	 02 07 80 // setid
    86 // var of city
    82 // var town pop
    00 FF FF // varadj
@@ -892,81 +835,78 @@
     FF FF // maxval
    60 00 // default setid  
 // Current Callback  
-  180 * 23	 02 07 // act 2 feat 7
+  177 * 17	 02 07 // act 2 feat 7
    90 // setid
    85 // type, variable of building
    0C // variable 0c current callback
    00 // shift
    FF FF // and mask
-   02 // ranges to follow
+   01 // ranges to follow
    80 00 // setid
     17 00 // callback 17 on build
     17 00 // callback 17 on build
-   70 00 // setid check how many are left
-    43 01 // callback 143 on destruct
-    43 01 // callback 143 on destruct
    60 00 // default setid which is the random chance to pick the style, which points at the construction stages, etc.
 // Action 3
-  181 * 7	 03 07 01 02 00 90 00
+  178 * 7	 03 07 01 02 00 90 00
 // Department Store (S)
 // Action 1's - Four Variations
-  182 * 6	 01 07 18 FF 01 00
+  179 * 6	 01 07 18 FF 01 00
 // 1st
-  183 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  180 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 10 167 64 49 -31 -18 normal chunked nocrop
-  184 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  181 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 84 167 64 49 -31 -18 normal chunked nocrop
-  185 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  182 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 158 167 64 49 -31 -18 normal chunked nocrop
-  186 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  183 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 232 167 64 49 -31 -18 normal chunked nocrop
-  187 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  184 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 306 167 64 49 -31 -18 normal chunked nocrop
-  188 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  185 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 380 167 64 49 -31 -18 normal chunked nocrop
 // 2nd
-  189 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  186 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 10 169 64 50 -31 -19 normal chunked nocrop
-  190 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  187 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 84 169 64 50 -31 -19 normal chunked nocrop
-  191 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  188 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 158 169 64 50 -31 -19 normal chunked nocrop
-  192 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  189 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 232 169 64 50 -31 -19 normal chunked nocrop
-  193 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  190 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 306 169 64 50 -31 -19 normal chunked nocrop
-  194 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  191 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 380 169 64 50 -31 -19 normal chunked nocrop
 // 3rd
-  195 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  192 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 10 160 64 46 -31 -15 normal chunked nocrop
-  196 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  193 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 84 160 64 46 -31 -15 normal chunked nocrop
-  197 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  194 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 158 160 64 46 -31 -15 normal chunked nocrop
-  198 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  195 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 232 160 64 46 -31 -15 normal chunked nocrop
-  199 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  196 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 306 160 64 46 -31 -15 normal chunked nocrop
-  200 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  197 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 380 160 64 46 -31 -15 normal chunked nocrop
 // 4th
-  201 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  198 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 10 165 64 48 -31 -17 normal chunked nocrop
-  202 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  199 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 84 165 64 48 -31 -17 normal chunked nocrop
-  203 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  200 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 158 165 64 48 -31 -17 normal chunked nocrop
-  204 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  201 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 232 165 64 48 -31 -17 normal chunked nocrop
-  205 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  202 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 306 165 64 48 -31 -17 normal chunked nocrop
-  206 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  203 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 380 165 64 48 -31 -17 normal chunked nocrop
 // Action 0
-  207 * 16	 00 07 05 01 03 08 23 10 \w60000 11 FF 19 02 1D 04
+  204 * 16	 00 07 05 01 03 08 23 10 \w60000 11 FF 19 02 1D 04
 // Action 4 to set name:  
-  208 * 29	 04 07 // Action 4, Feature 7
+  205 * 29	 04 07 // Action 4, Feature 7
   9F // Language ID
   01 // Number of strings to change
   03 C9 // Offset
@@ -974,38 +914,38 @@
 // Action 2 Chain:
 // Action 2 Chain:
 // Variation 1
-  209 * 17	 02 07 // act 2 feat 7
+  206 * 17	 02 07 // act 2 feat 7
    10 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    00 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  210 * 17	 02 07 // act 2 feat 7
+  207 * 17	 02 07 // act 2 feat 7
    11 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    01 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  211 * 17	 02 07 // act 2 feat 7
+  208 * 17	 02 07 // act 2 feat 7
    12 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    02 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  212 * 17	 02 07 // act 2 feat 7
+  209 * 17	 02 07 // act 2 feat 7
    13 // setid
    00 // not a varact
    04 00 00 80 // ground sprite
    03 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  213 * 17	 02 07 // act 2 feat 7
+  210 * 17	 02 07 // act 2 feat 7
    14 // setid
    00 // not a varact
    04 00 00 80 // ground sprite
    05 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  214 * 18	 02 07 // act 2 feat 7
+  211 * 18	 02 07 // act 2 feat 7
    15 // setid
    81 // town var
    43 // terrain type
@@ -1017,7 +957,7 @@
      14 00 // snowy sprite
     04 04
      13 00 // default not snowy
-  215 * 22	 02 07 // act 2 feat 7
+  212 * 22	 02 07 // act 2 feat 7
    16 // setid
    81 // town var
    40 // Construction Stage
@@ -1032,38 +972,38 @@
     02 02
      15 00 // stage 3 built (go to snow picker)
 // Variation 2
-  216 * 17	 02 07 // act 2 feat 7
+  213 * 17	 02 07 // act 2 feat 7
    20 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    06 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  217 * 17	 02 07 // act 2 feat 7
+  214 * 17	 02 07 // act 2 feat 7
    21 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    07 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  218 * 17	 02 07 // act 2 feat 7
+  215 * 17	 02 07 // act 2 feat 7
    22 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    08 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  219 * 17	 02 07 // act 2 feat 7
+  216 * 17	 02 07 // act 2 feat 7
    23 // setid
    00 // not a varact
    0A 00 00 80 // ground sprite
    09 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  220 * 17	 02 07 // act 2 feat 7
+  217 * 17	 02 07 // act 2 feat 7
    24 // setid
    00 // not a varact
    0A 00 00 80 // ground sprite
    0B 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  221 * 18	 02 07 // act 2 feat 7
+  218 * 18	 02 07 // act 2 feat 7
    25 // setid
    81 // town var
    43 // terrain type
@@ -1075,7 +1015,7 @@
      24 00 // snowy sprite
     04 04
      23 00 // default not snowy
-  222 * 22	 02 07 // act 2 feat 7
+  219 * 22	 02 07 // act 2 feat 7
    26 // setid
    81 // town var
    40 // Construction Stage
@@ -1090,38 +1030,38 @@
     02 02
      25 00 // stage 3 built (go to snow picker)
 // Variation 3
-  223 * 17	 02 07 // act 2 feat 7
+  220 * 17	 02 07 // act 2 feat 7
    30 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0C 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  224 * 17	 02 07 // act 2 feat 7
+  221 * 17	 02 07 // act 2 feat 7
    31 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0D 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  225 * 17	 02 07 // act 2 feat 7
+  222 * 17	 02 07 // act 2 feat 7
    32 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0E 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  226 * 17	 02 07 // act 2 feat 7
+  223 * 17	 02 07 // act 2 feat 7
    33 // setid
    00 // not a varact
    10 00 00 80 // ground sprite
    0F 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  227 * 17	 02 07 // act 2 feat 7
+  224 * 17	 02 07 // act 2 feat 7
    34 // setid
    00 // not a varact
    10 00 00 80 // ground sprite
    11 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  228 * 18	 02 07 // act 2 feat 7
+  225 * 18	 02 07 // act 2 feat 7
    35 // setid
    81 // town var
    43 // terrain type
@@ -1133,7 +1073,7 @@
      34 00 // snowy sprite
     04 04
      33 00 // default not snowy
-  229 * 22	 02 07 // act 2 feat 7
+  226 * 22	 02 07 // act 2 feat 7
    36 // setid
    81 // town var
    40 // Construction Stage
@@ -1148,38 +1088,38 @@
     02 02
      35 00 // stage 3 built (go to snow picker)
 // Variation 4
-  230 * 17	 02 07 // act 2 feat 7
+  227 * 17	 02 07 // act 2 feat 7
    40 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    12 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  231 * 17	 02 07 // act 2 feat 7
+  228 * 17	 02 07 // act 2 feat 7
    41 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    13 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  232 * 17	 02 07 // act 2 feat 7
+  229 * 17	 02 07 // act 2 feat 7
    42 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    14 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  233 * 17	 02 07 // act 2 feat 7
+  230 * 17	 02 07 // act 2 feat 7
    43 // setid
    00 // not a varact
    16 00 00 80 // ground sprite
    15 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  234 * 17	 02 07 // act 2 feat 7
+  231 * 17	 02 07 // act 2 feat 7
    44 // setid
    00 // not a varact
    16 00 00 80 // ground sprite
    17 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  235 * 18	 02 07 // act 2 feat 7
+  232 * 18	 02 07 // act 2 feat 7
    45 // setid
    81 // town var
    43 // terrain type
@@ -1191,7 +1131,7 @@
      44 00 // snowy sprite
     04 04
      43 00 // default not snowy
-  236 * 22	 02 07 // act 2 feat 7
+  233 * 22	 02 07 // act 2 feat 7
    46 // setid
    81 // town var
    40 // Construction Stage
@@ -1206,7 +1146,7 @@
     02 02
      45 00 // stage 3 built (go to snow picker)
  // Pick random variation
-  237 * 15	 02 07 // act 2 feat 7
+  234 * 15	 02 07 // act 2 feat 7
   60 // spriteid
   80 // random
   00 // no triggers
@@ -1216,26 +1156,9 @@
    26 00 // 2nd
    36 00 // 3rd
    46 00 // 4th
-// Check to see if one has already been built
-//!!Warning (170): Default result cannot be reached.
-  238 * 19	 02 07 // Act 2 feat 7
-   70 // setid
-   81 // town var
-   61 // how many of a building id exist
-   03 // the building id to check, ours!
-   00 // shift
-   FF // and mask
-   02 // ranges to follow
-   01 80 // setid to use (protec)
-    00 // minval
-    03 // maxval
-   00 80 // setid to use (unprotec)
-    04 // minval
-    FF // maxval
-   60 00 // setid to use (unprotec) 
 // varact2 to restrict building until a certain population (3k)
 //!!Warning (170): Default result cannot be reached.
-  239 * 23	 02 07 80 // setid
+  235 * 23	 02 07 80 // setid
    86 // var of city
    82 // var town pop
    00 FF FF // varadj
@@ -1248,81 +1171,78 @@
     FF FF // maxval
    60 00 // default setid  
 // Current Callback  
-  240 * 23	 02 07 // act 2 feat 7
+  236 * 17	 02 07 // act 2 feat 7
    90 // setid
    85 // type, variable of building
    0C // variable 0c current callback
    00 // shift
    FF FF // and mask
-   02 // ranges to follow
+   01 // ranges to follow
    80 00 // setid
     17 00 // callback 17 on build
     17 00 // callback 17 on build
-   70 00 // setid check how many are left
-    43 01 // callback 143 on destruct
-    43 01 // callback 143 on destruct
    60 00 // default setid which is the random chance to pick the style, which points at the construction stages, etc.
 // Action 3
-  241 * 7	 03 07 01 03 00 90 00
+  237 * 7	 03 07 01 03 00 90 00
 // Department Store (W)
 // Action 1's - Four Variations
-  242 * 6	 01 07 18 FF 01 00
+  238 * 6	 01 07 18 FF 01 00
 // 1st
-  243 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  239 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 10 126 64 31 -31 -0 normal chunked nocrop
-  244 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  240 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 84 126 64 31 -31 -0 normal chunked nocrop
-  245 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  241 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 158 126 64 31 -31 -0 normal chunked nocrop
-  246 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  242 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 232 126 64 31 -31 -0 normal chunked nocrop
-  247 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  243 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 306 126 64 31 -31 -0 normal chunked nocrop
-  248 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  244 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre1.png 32bpp 380 126 64 31 -31 -0 normal chunked nocrop
 // 2nd
-  249 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  245 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 10 128 64 31 -31 -0 normal chunked nocrop
-  250 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  246 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 84 128 64 31 -31 -0 normal chunked nocrop
-  251 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  247 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 158 128 64 31 -31 -0 normal chunked nocrop
-  252 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  248 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 232 128 64 31 -31 -0 normal chunked nocrop
-  253 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  249 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 306 128 64 31 -31 -0 normal chunked nocrop
-  254 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  250 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre2.png 32bpp 380 128 64 31 -31 -0 normal chunked nocrop
 // 3rd
-  255 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  251 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 10 119 64 31 -31 -0 normal chunked nocrop
-  256 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  252 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 84 119 64 31 -31 -0 normal chunked nocrop
-  257 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  253 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 158 119 64 31 -31 -0 normal chunked nocrop
-  258 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  254 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 232 119 64 31 -31 -0 normal chunked nocrop
-  259 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  255 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 306 119 64 31 -31 -0 normal chunked nocrop
-  260 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  256 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre3.png 32bpp 380 119 64 31 -31 -0 normal chunked nocrop
 // 4th
-  261 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  257 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 10 124 64 31 -31 -0 normal chunked nocrop
-  262 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  258 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 84 124 64 31 -31 -0 normal chunked nocrop
-  263 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  259 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 158 124 64 31 -31 -0 normal chunked nocrop
-  264 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  260 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 232 124 64 31 -31 -0 normal chunked nocrop
-  265 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  261 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 306 124 64 31 -31 -0 normal chunked nocrop
-  266 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+  262 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
     | art/ShoppingCentre4.png 32bpp 380 124 64 31 -31 -0 normal chunked nocrop
 // Action 0
-  267 * 16	 00 07 05 01 04 08 22 10 \w60000 11 FF 19 02 1D 04
+  263 * 16	 00 07 05 01 04 08 22 10 \w60000 11 FF 19 02 1D 04
 // Action 4 to set name:  
-  268 * 28	 04 07 // Action 4, Feature 7
+  264 * 28	 04 07 // Action 4, Feature 7
   9F // Language ID
   01 // Number of strings to change
   04 C9 // Offset
@@ -1330,38 +1250,38 @@
 // Action 2 Chain:
 // Action 2 Chain:
 // Variation 1
-  269 * 17	 02 07 // act 2 feat 7
+  265 * 17	 02 07 // act 2 feat 7
    10 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    00 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  270 * 17	 02 07 // act 2 feat 7
+  266 * 17	 02 07 // act 2 feat 7
    11 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    01 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  271 * 17	 02 07 // act 2 feat 7
+  267 * 17	 02 07 // act 2 feat 7
    12 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    02 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  272 * 17	 02 07 // act 2 feat 7
+  268 * 17	 02 07 // act 2 feat 7
    13 // setid
    00 // not a varact
    04 00 00 80 // ground sprite
    03 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  273 * 17	 02 07 // act 2 feat 7
+  269 * 17	 02 07 // act 2 feat 7
    14 // setid
    00 // not a varact
    04 00 00 80 // ground sprite
    05 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  274 * 18	 02 07 // act 2 feat 7
+  270 * 18	 02 07 // act 2 feat 7
    15 // setid
    81 // town var
    43 // terrain type
@@ -1373,7 +1293,7 @@
      14 00 // snowy sprite
     04 04
      13 00 // default not snowy
-  275 * 22	 02 07 // act 2 feat 7
+  271 * 22	 02 07 // act 2 feat 7
    16 // setid
    81 // town var
    40 // Construction Stage
@@ -1388,38 +1308,38 @@
     02 02
      15 00 // stage 3 built (go to snow picker)
 // Variation 2
-  276 * 17	 02 07 // act 2 feat 7
+  272 * 17	 02 07 // act 2 feat 7
    20 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    06 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  277 * 17	 02 07 // act 2 feat 7
+  273 * 17	 02 07 // act 2 feat 7
    21 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    07 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  278 * 17	 02 07 // act 2 feat 7
+  274 * 17	 02 07 // act 2 feat 7
    22 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    08 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  279 * 17	 02 07 // act 2 feat 7
+  275 * 17	 02 07 // act 2 feat 7
    23 // setid
    00 // not a varact
    0A 00 00 80 // ground sprite
    09 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  280 * 17	 02 07 // act 2 feat 7
+  276 * 17	 02 07 // act 2 feat 7
    24 // setid
    00 // not a varact
    0A 00 00 80 // ground sprite
    0B 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  281 * 18	 02 07 // act 2 feat 7
+  277 * 18	 02 07 // act 2 feat 7
    25 // setid
    81 // town var
    43 // terrain type
@@ -1431,7 +1351,7 @@
      24 00 // snowy sprite
     04 04
      23 00 // default not snowy
-  282 * 22	 02 07 // act 2 feat 7
+  278 * 22	 02 07 // act 2 feat 7
    26 // setid
    81 // town var
    40 // Construction Stage
@@ -1446,38 +1366,38 @@
     02 02
      25 00 // stage 3 built (go to snow picker)
 // Variation 3
-  283 * 17	 02 07 // act 2 feat 7
+  279 * 17	 02 07 // act 2 feat 7
    30 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0C 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  284 * 17	 02 07 // act 2 feat 7
+  280 * 17	 02 07 // act 2 feat 7
    31 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0D 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  285 * 17	 02 07 // act 2 feat 7
+  281 * 17	 02 07 // act 2 feat 7
    32 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    0E 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  286 * 17	 02 07 // act 2 feat 7
+  282 * 17	 02 07 // act 2 feat 7
    33 // setid
    00 // not a varact
    10 00 00 80 // ground sprite
    0F 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  287 * 17	 02 07 // act 2 feat 7
+  283 * 17	 02 07 // act 2 feat 7
    34 // setid
    00 // not a varact
    10 00 00 80 // ground sprite
    11 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  288 * 18	 02 07 // act 2 feat 7
+  284 * 18	 02 07 // act 2 feat 7
    35 // setid
    81 // town var
    43 // terrain type
@@ -1489,7 +1409,7 @@
      34 00 // snowy sprite
     04 04
      33 00 // default not snowy
-  289 * 22	 02 07 // act 2 feat 7
+  285 * 22	 02 07 // act 2 feat 7
    36 // setid
    81 // town var
    40 // Construction Stage
@@ -1504,38 +1424,38 @@
     02 02
      35 00 // stage 3 built (go to snow picker)
 // Variation 4
-  290 * 17	 02 07 // act 2 feat 7
+  286 * 17	 02 07 // act 2 feat 7
    40 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    12 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  291 * 17	 02 07 // act 2 feat 7
+  287 * 17	 02 07 // act 2 feat 7
    41 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    13 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  292 * 17	 02 07 // act 2 feat 7
+  288 * 17	 02 07 // act 2 feat 7
    42 // setid
    00 // not a varact
    54 0F 00 00 // ground sprite
    14 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  293 * 17	 02 07 // act 2 feat 7
+  289 * 17	 02 07 // act 2 feat 7
    43 // setid
    00 // not a varact
    16 00 00 80 // ground sprite
    15 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
-  294 * 17	 02 07 // act 2 feat 7
+  290 * 17	 02 07 // act 2 feat 7
    44 // setid
    00 // not a varact
    16 00 00 80 // ground sprite
    17 00 00 80 // building sprite
    00 00 10 10 04 // xoff yoff xext yext zext
 //!!Warning (100): Default ID appears earlier in sprite.
-  295 * 18	 02 07 // act 2 feat 7
+  291 * 18	 02 07 // act 2 feat 7
    45 // setid
    81 // town var
    43 // terrain type
@@ -1547,7 +1467,7 @@
      44 00 // snowy sprite
     04 04
      43 00 // default not snowy
-  296 * 22	 02 07 // act 2 feat 7
+  292 * 22	 02 07 // act 2 feat 7
    46 // setid
    81 // town var
    40 // Construction Stage
@@ -1562,7 +1482,7 @@
     02 02
      45 00 // stage 3 built (go to snow picker)
  // Pick random variation
-  297 * 15	 02 07 // act 2 feat 7
+  293 * 15	 02 07 // act 2 feat 7
   60 // spriteid
   80 // random
   00 // no triggers
@@ -1572,26 +1492,9 @@
    26 00 // 2nd
    36 00 // 3rd
    46 00 // 4th
-// Check to see if one has already been built
-//!!Warning (170): Default result cannot be reached.
-  298 * 19	 02 07 // Act 2 feat 7
-   70 // setid
-   81 // town var
-   61 // how many of a building id exist
-   04 // the building id to check, ours!
-   00 // shift
-   FF // and mask
-   02 // ranges to follow
-   01 80 // setid to use (protec)
-    00 // minval
-    03 // maxval
-   00 80 // setid to use (unprotec)
-    04 // minval
-    FF // maxval
-   60 00 // setid to use (unprotec) 
 // varact2 to restrict building until a certain population (3k)
 //!!Warning (170): Default result cannot be reached.
-  299 * 23	 02 07 80 // setid
+  294 * 23	 02 07 80 // setid
    86 // var of city
    82 // var town pop
    00 FF FF // varadj
@@ -1604,20 +1507,17 @@
     FF FF // maxval
    60 00 // default setid  
 // Current Callback  
-  300 * 23	 02 07 // act 2 feat 7
+  295 * 17	 02 07 // act 2 feat 7
    90 // setid
    85 // type, variable of building
    0C // variable 0c current callback
    00 // shift
    FF FF // and mask
-   02 // ranges to follow
+   01 // ranges to follow
    80 00 // setid
     17 00 // callback 17 on build
     17 00 // callback 17 on build
-   70 00 // setid check how many are left
-    43 01 // callback 143 on destruct
-    43 01 // callback 143 on destruct
    60 00 // default setid which is the random chance to pick the style, which points at the construction stages, etc.
 // Action 3
-  301 * 7	 03 07 01 04 00 90 00
+  296 * 7	 03 07 01 04 00 90 00
 // Fin
