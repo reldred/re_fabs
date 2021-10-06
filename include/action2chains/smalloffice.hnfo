@@ -1,0 +1,92 @@
+// Action2 Chain for the Small Buildings
+// What we're going to do is check first check for our callbacks, if our callback gets called (This time its a callback that gets called when a town tries to demolish it's own building), it will go to a random action2, which then provides a few different possibilities for protecting the building. If the callback isn't getting called, it will jump straight to the construction stages, which will move through the three different stages of construction, before hitting the last stage, which is another varaction2 that checks for the ground type. That varaction2 will then link to either the normal building sprite, or the snowy building sprite depending on the ground type.
+
+// 1st stage action 2:   
+    0 * 0	 02 07 // Action 2, Feature 07
+                 00 // Set ID
+                 00 // Literal 0
+                 54 0F 00 00 // Ground Sprite (3924)
+                 01 00 00 80 // Building Sprite (01)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+     
+// 2nd stage action 2:
+    0 * 0	 02 07 // Action 2, Feature 07
+                 01 // Set ID
+                 00 // Literal 0
+                 54 0F 00 00 // Ground Sprite (3924)
+                 02 00 00 80 // Building Sprite (02)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+   
+// 3rd stage action 2:
+    0 * 0	 02 07 // Action 2, Feature 07
+                 02 // Set ID
+                 00 // Literal 0
+                 54 0F 00 00 // Ground Sprite (3924)
+                 03 00 00 80 // Building Sprite (03)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+   
+// Finished stage action 2:
+    0 * 0	 02 07 // Action 2, Feature 07
+                 03 // Set ID
+                 00 // Literal 0
+                 00 00 00 80 // Ground Sprite (00)
+                 04 00 00 80 // Building Sprite (04)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+   
+// Snowy stage action 2:
+    0 * 0	 02 07 // Action 2, Feature 07
+                 04 // Set ID
+                 00 // Literal 0
+                 04 00 00 80 // Ground Sprite (00)
+                 05 00 00 80 // Building Sprite (05)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+   
+// Check ground type and select either no.3 or no.4:
+    0 * 0	 02 07 // Action 2, Feature 07
+                 10 // Set ID
+                 81 // Type (Lowest Byte of value accessed for house)
+                 43 // Variable (Terrain Type)
+                 00 FF // Varadjust (AND FF)
+                 02 // Nuber of ranges
+                 // Range Checks:
+                 03 00 // Use Set ID 3...
+                 00 03 // If ground type between 0 and 3
+                 04 00 // Use Set ID 4...
+                 04 04 // If ground type between 4 and 4
+                 03 00 // Default SetID to use if checks fail
+   
+// Construction stages, at last stage go to ground type checking:
+    0 * 0	 02 07 // Action 2, Feature 07
+                 FF // Set ID
+                 81 // Type (Lowest Byte of value accessed for house)
+                 40 // Variable (Construction stages)
+                 00 03 // Varadjust (AND FF)
+                 03 // Number of ranges
+                 // Range Checks:
+                 00 00 // Use Set ID 0...
+                 00 00 // If construction stage 0
+                 01 00 // Use Set ID 1...
+                 01 01 // If construction stage 1
+                 02 00 // Use Set ID 2...
+                 02 02 // If construction stage 2
+                 10 00 // Default Set ID to use if checks fail

@@ -1,0 +1,120 @@
+// Action 2 chain:
+// What we're going to do is check first check for our callbacks, if our callback gets called (This time its a callback that gets called when a town tries to demolish it's own building), it will go to a random action2, which then provides a few different possibilities for protecting the building. If the callback isn't getting called, it will jump to another random action 2 which will then link to four different construction stages, which will move through the three different stages of construction, before hitting the last stage, which is another varaction2 that checks for the ground type. That varaction2 will then link to either the normal building sprite, or the snowy building sprite depending on the ground type.                 
+
+// Variant 1:
+
+// 1st stage action 2:
+    0 * 0	 02 07 // Action 2, Feature 07
+                 00 // Set ID
+                 00 // Literal 0
+                 54 0F 00 00 // Ground Sprite (3924)
+                 01 00 00 80 // Building Sprite (01)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+
+// 2nd stage action 2:
+    0 * 0	 02 07 // Action 2, Feature 07
+                 01 // Set ID
+                 00 // Literal 0
+                 54 0F 00 00 // Ground Sprite (3924)
+                 02 00 00 80 // Building Sprite (02)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+
+// 3rd stage action 2:  
+    0 * 0	 02 07 // Action 2, Feature 07
+                 02 // Set ID
+                 00 // Literal 0
+                 54 0F 00 00 // Ground Sprite (3924(
+                 03 00 00 80 // Building Sprite (03)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+
+// Finished stage action 2:  
+    0 * 0	 02 07 // Action 2, Feature 07
+                 03 // Set ID
+                 00 // Literal 0
+                 00 00 00 80 // Ground Sprite (0)
+                 04 00 00 80 // Building Sprite (04)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+
+// Snowy stage action 2:  
+    0 * 0	 02 07 // Action 2, Feature 07
+                 04 // Set ID
+                 00 // Literal 0
+                 00 00 00 80 // Ground Sprite (00)
+                 05 00 00 80 // Building Sprite (05)
+                 00 // Xoff
+                 00 // Yoff
+                 10 // Xext
+                 10 // Yext
+                 04 // Zext
+
+// Check ground type and select either no.3 or no.4:  
+    0 * 0	 02 07 // Action 2, Feature 07
+                 20 // Set ID
+                 81 // Type (Lowest Byte of value accessed for house)
+                 43 // Variable (Terrain Type)
+                 00 FF // AND Mask
+                 02 // Number of ranges
+                 // Range Checks:
+                 03 00 // Use SetID 3 if...
+                 00 03 // Ground type between 0 and 3
+                 04 00 // Use SetID 4 if...
+                 04 04 // Ground type is 4
+                 03 00 // Default SetID to use if checks fail
+
+// Construction stages, at last stage go to ground type checking:  
+    0 * 0	 02 07 // Action 2, Feature 07
+                 21 // Set ID
+                 81 // Type (Lowest Byte of value accessed for house)
+                 40 // Variable (Construction Stages)
+                 00 03 // AND Mask
+                 03 // Number of ranges
+                 // Range checks:
+                 00 00 // Use SetID 0...
+                 00 00 // If construction stage 0
+                 01 00 // Use SetID 1...
+                 01 01 // If construction stage 1
+                 02 00 // Use SetID 2...
+                 02 02 // If construction stage 2
+                 20 00 // Default Set ID to use if checks fail 
+
+// Check minimum population required
+    0 * 0	 02 07 
+		29 // setid
+		86 // var of city
+		82 // var town pop
+		00 FF FF // varadj
+		02 // numranges
+		00 80 // setid
+		00 00 // minval
+		F3 01 // maxval
+		01 80 // setid
+		F4 01 // minval
+		FF FF // maxval
+		03 00 // default setid
+
+// Current Callback. If callback for destruction called, goto no.24, else goto no.28:  
+    0 * 0	 02 07 // Action 2, Feature 07
+                 FF // Set ID
+                 85 // Type (Lowest Word of value accessed for house)
+                 0C // Variable (Current Callback)
+                 00 FF FF // Varadjust (AND FFFF)
+                 01 // Number of ranges
+                 29 00 // Use SetID 29 if..
+                 17 00 17 00 // Callback 17 is being called
+                 21 00 // Default Sprite to use if check fails (Else goto 21) 

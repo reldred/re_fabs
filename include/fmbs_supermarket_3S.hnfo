@@ -1,0 +1,80 @@
+// Department Store (W)
+
+// Action 1's - Four Variations
+0 * 0	01 07 18 FF 01 00
+// 1st
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/ShoppingCentre1.png 32bpp 10 126 64 31 -31 -0 normal chunked nocrop
+0	 	art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre1.png 32bpp 84 126 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre1.png 32bpp 158 126 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre1.png 32bpp 232 126 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre1.png 32bpp 306 126 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre1.png 32bpp 380 126 64 31 -31 -0 normal chunked nocrop
+// 2nd
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/ShoppingCentre2.png 32bpp 10 128 64 31 -31 -0 normal chunked nocrop
+0	 	art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre2.png 32bpp 84 128 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre2.png 32bpp 158 128 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre2.png 32bpp 232 128 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre2.png 32bpp 306 128 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre2.png 32bpp 380 128 64 31 -31 -0 normal chunked nocrop
+// 3rd
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/ShoppingCentre3.png 32bpp 10 119 64 31 -31 -0 normal chunked nocrop
+0	 	art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre3.png 32bpp 84 119 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre3.png 32bpp 158 119 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre3.png 32bpp 232 119 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre3.png 32bpp 306 119 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre3.png 32bpp 380 119 64 31 -31 -0 normal chunked nocrop
+// 4th
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|    	art/ShoppingCentre4.png 32bpp 10 124 64 31 -31 -0 normal chunked nocrop
+0	 	art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre4.png 32bpp 84 124 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre4.png 32bpp 158 124 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre4.png 32bpp 232 124 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre4.png 32bpp 306 124 64 31 -31 -0 normal chunked nocrop
+0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+|		art/ShoppingCentre4.png 32bpp 380 124 64 31 -31 -0 normal chunked nocrop
+
+// Action 0
+0 * 0		00 07 
+		05
+		01 
+		BUILDING_ID 
+		08 22 
+		10 60 EA 
+		11 FF
+		19 02		
+		1D 04 
+
+// Action 4 to set name:  
+0 * 0		04 07  // Action 4, Feature 7
+		9F // Language ID
+		01 // Number of strings to change
+		BUILDING_ID C9 // Offset
+		"Department Store West" 00 // String
+                 
+// Action 2 Chain:
+#include "action2chains/fmbs_supermarket.hnfo"                      
+
+// Action 3
+0 * 0		03 07 01 BUILDING_ID 00 90 00

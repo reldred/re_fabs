@@ -1,0 +1,97 @@
+// Action 2 Chain:
+// Variation 1
+0 * 0		02 07 // act 2 feat 7
+			10 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			01 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			11 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			02 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			12 // setid
+			00 // not a varact
+			54 0F 00 00 // ground sprite
+			02 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			13 // setid
+			00 // not a varact
+			00 00 00 80 // ground sprite
+			04 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+
+0 * 0		02 07 // act 2 feat 7
+			14 // setid
+			00 // not a varact
+			00 00 00 80 // ground sprite
+			05 00 00 80 // building sprite
+			00 00 10 10 04 // xoff yoff xext yext zext
+			
+0 * 0		02 07 // act 2 feat 7
+			15 // setid
+			81 // town var
+			43 // terrain type
+			00 // shift
+			FF // and mask
+			02 // ranges to follow
+			13 00 // not snowy sprite
+				00 
+				03 
+			14 00 // snowy sprite
+				04 
+				04 
+			13 00 // default not snowy
+
+0 * 0		02 07 // act 2 feat 7
+			16 // setid
+			81 // town var
+			40 // Construction Stage
+			00 // shift
+			03 // and mask
+			03 // ranges to follow
+			10 00 // stage 0
+				00 
+				00 
+			11 00 // stage 1
+				01 
+				01 
+			12 00 // stage 2
+				02 
+				02 
+			15 00 // stage 3 built (go to snow picker)
+
+// varact2 to restrict building until a certain population (3k)
+0 * 0		2 07 
+			80 // setid
+			86 // var of city
+			82 // var town pop
+			00 FF FF // varadj
+			02 // numranges
+			00 80 // setid
+				00 00 // minval
+				E7 03 // maxval
+			01 80 // setid
+				E8 03 // minval
+				FF FF // maxval
+			16 00 // default setid  
+
+// Current Callback  
+0 * 0		02 07 // act 2 feat 7
+			FF // setid
+			85 // type, variable of building
+			0C // variable 0c current callback
+			00 // shift
+			FF FF // and mask
+			01 // ranges to follow
+			80 00 // setid
+				17 00 // callback 17 on build
+				17 00 // callback 17 on build
+			16 00 // default setid which is the random chance to pick the style, which points at the construction stages, etc.

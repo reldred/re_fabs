@@ -1,0 +1,36 @@
+// Small Office 2
+
+// Action 1:
+0 * 0		01 07 06 FF 01 00 
+
+// Real Sprites:
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/SmallOffice2.png 32bpp 10 10 64 31 -31 0 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/SmallOffice2.png 32bpp 84 10 64 94 -31 -63 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/SmallOffice2.png 32bpp 158 10 64 94 -31 -63 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/SmallOffice2.png 32bpp 232 10 64 94 -31 -63 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/SmallOffice2.png 32bpp 306 10 64 94 -31 -63 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/SmallOffice2.png 32bpp 380 10 64 93 -31 -63 normal chunked nocrop
+
+// Action 0 to set properties:   
+#include "action0s/smalloffice.hnfo"
+
+// Action 4 to set name:  
+0 * 0		04 07  // Action 4, Feature 7
+		FF // Language ID
+		01 // Number of strings to change
+		BUILDING_ID C9 // Offset
+		"Small Offices" 00 // String
+                 
+// Action 2 chain:
+#include "action2chains/smalloffice.hnfo"
+
+// Assign last action2 to id.2:
+0 * 0		03 07 01 BUILDING_ID 00 FF 00
+
+// Fin
