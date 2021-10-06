@@ -1,3 +1,3 @@
-# re_fmbs | fridaemons modern buildings set
+# re_fabs | fridaemons and aegirs building set
 
-Coded by reldred. Artwork by Fridaemon. Used under the terms of the GPLv2 License and as such this derivative work is licensed as such. For support go bug reldred on #openttd or the Discord.
+Fridaemon and Aegir's Building Set (Working title) or FABS for short is an newhouses set comprised of existing artwork from Fridaemon from his newobjects set and new graphics drawn specifically for this set. 
