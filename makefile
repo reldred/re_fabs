@@ -13,7 +13,7 @@
 # Paths for our tools
 GRFCODEC = grfcodec
 NFORENUM = nforenum -b +
-GRFDIR = ../../../../../REHI-GREEN/Software/Games/JGR\ Patchpack/newgrf/
+GRFDIR = ../../../../Software/Games/JGR\ Patchpack/newgrf/
 
 # GCC Settings:
 CC = gcc

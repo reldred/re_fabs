@@ -18,7 +18,18 @@
     | art/SmallOffice1.png 32bpp 380 10 64 93 -31 -63 normal chunked nocrop
 
 // Action 0 to set properties:   
-#include "action0s/smalloffice.hnfo"
+0 * 0		00 07 // Action 0, Feature 7
+		08 // Properties to change
+		01 // Change properties for how many ID's
+		BUILDING_ID // ID
+		08 46 // Substitute type
+		09 01 // Building flags
+//		0A 00 1D // Set years availible
+		13 0C 70 // Set availibility mask
+		18 07 // Probability
+		1D 04 // Set prop 1D to 4
+            21 \w1960 // Long intro year
+            22 \w2050 // Long outro year
 
 // Action 4 to set name:  
 0 * 0		04 07  // Action 4, Feature 7

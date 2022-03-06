@@ -1,0 +1,22 @@
+﻿##grflangid 0x01
+
+#Main grf title and description
+STR_GRF_NAME            :Addons by Fridaemon
+STR_GRF_DESCRIPTION     :{ORANGE}2022
+STR_GRF_URL             :
+
+
+
+#Object classes
+
+STR_FR3T		:      ADDONS: TEST
+
+
+
+
+#object name and description
+STR_trop8set1            :Building set
+STR_trop8set1_PURCHASE   :Building set
+STR_trop3set		:Building set
+STR_buildingset1	:Test
+STR_buildingset2	:Test

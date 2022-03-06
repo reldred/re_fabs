@@ -70,7 +70,7 @@
 		1D 04
 		1E 1F
 		21 \w1980 // long intro 1950
-		22 \w2029 // long outro 2029
+            22 \w2050 // Long outro year
 
 // Action 4 to set name:  
 0 * 0		04 07  // Action 4, Feature 7

@@ -18,7 +18,7 @@
 			12 // setid
 			00 // not a varact
 			54 0F 00 00 // ground sprite
-			02 00 00 80 // building sprite
+			03 00 00 80 // building sprite
 			00 00 10 10 04 // xoff yoff xext yext zext
 
 0 * 0		02 07 // act 2 feat 7

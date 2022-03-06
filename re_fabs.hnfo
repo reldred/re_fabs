@@ -4,6 +4,12 @@
 
 // Total number of sprites (Let nforenum deal with this):
 0 * 0		00 00 00 00 
+
+// Action 14 for Palette
+0 * 0   14 "C" "INFO"
+                 "B" "PALS" \w1 D
+                 00
+             00
     
 // Action 8 for description, copyright notice, and grfid:
 0 * 0		08 08
@@ -82,5 +88,92 @@
 #include "include/hotel1_2W.hnfo"
 #define BUILDING_ID 17
 #include "include/hotel1_3S.hnfo"
+
+// Large Office 1 (North, East, South, West)
+#define BUILDING_ID 18
+#include "include/large_skyscraper_01_0N.hnfo"
+#define BUILDING_ID 19
+#include "include/large_skyscraper_01_1E.hnfo"
+#define BUILDING_ID 1A
+#include "include/large_skyscraper_01_2W.hnfo"
+#define BUILDING_ID 1B
+#include "include/large_skyscraper_01_3S.hnfo"
+
+// Large Office 1 (North, East, South, West)
+#define BUILDING_ID 1C
+#include "include/large_skyscraper_02_0N.hnfo"
+#define BUILDING_ID 1D
+#include "include/large_skyscraper_02_1E.hnfo"
+#define BUILDING_ID 1E
+#include "include/large_skyscraper_02_2W.hnfo"
+#define BUILDING_ID 1F
+#include "include/large_skyscraper_02_3S.hnfo"
+
+// Family Restaurant 1 NE (North and South)
+#define BUILDING_ID 20
+#include "include/familyrestaurant_01_main.hnfo"
+#define BUILDING_ID 21
+#include "include/familyrestaurant_01_sub.hnfo"
+
+// Family Restaurant 2 NE (North and South)
+#define BUILDING_ID 22
+#include "include/familyrestaurant_02_main.hnfo"
+#define BUILDING_ID 23
+#include "include/familyrestaurant_02_sub.hnfo"
+
+// Medium Office 4 NW (North and South)
+#define BUILDING_ID 24
+#include "include/mediumoffice4main.hnfo"
+#define BUILDING_ID 25
+#include "include/mediumoffice4sub1.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 26
+#include "include/smalloffice6.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 27
+#include "include/smalloffice7.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 28
+#include "include/smalloffice8.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 29
+#include "include/smalloffice9.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 2A
+#include "include/smalloffice10.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 2B
+#include "include/smalloffice11.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 2C
+#include "include/smalloffice12.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 2D
+#include "include/smalloffice13.hnfo"
+
+// Small Office 2
+#define BUILDING_ID 2E
+#include "include/smalloffice14.hnfo"
+
+// Medium Office 1 NE (North and South)
+#define BUILDING_ID 2F
+#include "include/mediumoffice5main.hnfo"
+#define BUILDING_ID 30
+#include "include/mediumoffice5sub1.hnfo"
+
+// Family Restaurant 1 NE (North and South)
+#define BUILDING_ID 31
+#include "include/firestation_01_main.hnfo"
+#define BUILDING_ID 32
+#include "include/firestation_01_sub.hnfo"
+
 
 // Fin

@@ -3,7 +3,7 @@
 // Action 1's - Four Variations
 0 * 0	01 07 18 FF 01 00
 0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
-|    	art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
+|       art/32bppBlank.png 32bpp 10 10 64 31 -31 0 normal chunked nocrop
 0	 	art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
 |		art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
 0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
@@ -15,7 +15,7 @@
 0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
 |		art/SkyScraper1.png 32bpp 10 10 64 214 -31 -183 normal chunked nocrop
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
-|    	art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
+|       art/32bppBlank.png 32bpp 10 10 64 31 -31 0 normal chunked nocrop
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
 |		art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
@@ -27,7 +27,7 @@
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
 |		art/SkyScraper2.png 32bpp 10 10 64 197 -31 -166 normal chunked nocrop
 0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
-|		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
+|       art/32bppBlank.png 32bpp 10 10 64 31 -31 0 normal chunked nocrop
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
 |		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
@@ -39,7 +39,7 @@
 0		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
 |		art/SkyScraper3.png 32bpp 10 10 64 152 -31 -121 normal chunked nocrop
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
-|   	art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
+|       art/32bppBlank.png 32bpp 10 10 64 31 -31 0 normal chunked nocrop
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
 |    	art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
 0 		art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
@@ -52,22 +52,22 @@
 |		art/SkyScraper4.png 32bpp 10 10 64 151 -31 -120 normal chunked nocrop
 
 // Action 0
-0 * 0	00 07 
-		0B
-		01 
-		BUILDING_ID 
-		08 34 
-		09 01 
+0 * 0	00 07 // Action 0, Feature 07
+		0B // Properties to change
+		01 // Change properties for how many ID's
+		BUILDING_ID // ID
+		08 34 // Substitute type
+		09 01 // Building flags
 //		0A 00 1D // old short form intro/outro, unused
-		10 60 EA 
-		11 FF 
-		13 10 78 
+		10 60 EA // Local authority rating decrease
+		11 FF // Removal cost multiplier
+		13 \wx7010 // Set availibility mask
 		14 01 
-		18 0F
-		1D 04
+		18 07 // Probability
+		1D 04 // Set prop 1D to 4
 		1F 1E
 		21 \w1980 // long intro 1950
-		22 \w2029 // long outro 2029
+            22 \w2050 // Long outro year
 
  // Action 4 to set name:  
 0 * 0	04 07  // Action 4, Feature 7

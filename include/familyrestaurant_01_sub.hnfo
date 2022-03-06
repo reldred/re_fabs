@@ -1,0 +1,43 @@
+// Family Restaurant  (NE) (S)
+
+// Action 1:
+    0 * 0	 01 07 06 FF 01 00
+
+// Real Sprites:
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/FamilyRestaurant1.png 32bpp 10 10 64 31 -31 0 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/FamilyRestaurant1.png 32bpp 158 10 64 42 -31 -11 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/FamilyRestaurant1.png 32bpp 232 10 64 42 -31 -11 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/FamilyRestaurant1.png 32bpp 306 10 64 42 -31 -11 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/FamilyRestaurant1.png 32bpp 380 10 64 42 -31 -11 normal chunked nocrop
+    0 art/8bppBlank.png 8bpp 10 10 64 31 -31 -0 normal
+    | art/FamilyRestaurant1.png 32bpp 454 10 64 42 -31 -11 normal chunked nocrop
+
+// Action 0 to set properties:    
+    0 * 0	 00 07 // Action 0, Feature 07
+                 04 // Properties to change
+                 01 // Change properties for how many ID's
+                 BUILDING_ID // ID
+                 08 4B // Substitute type
+                 10 20 4E // Local authority rating decrease
+                 11 64 // Removal cost multiplier
+                 1D 04 // Set prop 1D to 4
+                 
+// Action 4 to set name:  
+    0 * 0	 04 07  // Action 4, Feature 7
+                 FF // Language ID
+                 01 // Number of strings to change
+                 BUILDING_ID C9 // Offset
+                 "Family Restaurant" 00 // String 
+                             
+// Action 2 chain:
+#include "action2chains/mediumoffice.hnfo"
+
+// Assign last action2 to id.BUILDING_ID:  
+  372 * 7	 03 07 01 BUILDING_ID 00 FF 00
+  
+// Fin  
